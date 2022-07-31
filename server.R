@@ -42,7 +42,15 @@ server <- function(input, output) {
     
     # Model
     library(prophet)
-    model <- prophet(df)
+    model <- prophet(yearly.seasonality = T,
+                     weekly.seasonality = F,
+                     daily.seasonality = F,
+                     seasonality.mode = 'multiplicative', # or additive
+                     seasonality.prior.scale = 10, # strength of the seasonality
+                     holidays.prior.scale = 10, # weight of the holidays
+                     changepoint.prior.scale = 0.05) # keeping trend robust
+    model <- fit.prophet(model, df)
+    
     future <- make_future_dataframe(model, periods = input$periods)
     
     # Forecast
