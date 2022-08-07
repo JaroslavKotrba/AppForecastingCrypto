@@ -20,6 +20,7 @@ server <- function(input, output) {
   
   output$coin <- renderPlotly({
     
+    # Data
     library(tseries)
     df <- get.hist.quote(instrument = input$select_coin,
                          start = input$date[1],
