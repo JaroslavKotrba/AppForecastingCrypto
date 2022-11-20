@@ -61,6 +61,7 @@ server <- function(input, output) {
     library(tidyverse)
     df_forecast <- full_join(df, forecast, by=c("ds"))
     df_forecast$color <- ifelse(is.na(df_forecast$y), 1, 0)
+    df_forecast$yhat <- ifelse(df_forecast$yhat < 0, 0, df_forecast$yhat)
     df_forecast$y <- ifelse(is.na(df_forecast$y), df_forecast$yhat, df_forecast$y)
     df_forecast$ds <- as.Date(as.character(df_forecast$ds))
     
