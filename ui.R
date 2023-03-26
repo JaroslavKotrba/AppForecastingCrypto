@@ -6,6 +6,7 @@ library(plotly)
 
 # ui
 ui <- fluidPage(
+  tags$head(tags$link(rel="shortcut icon", href="https://cutewallpaper.org/24/bitcoin-png/hd-blue-btc-bitcoin-crypto-blockchain-coin-icon-png-citypng.png")),
   title = "Crypto Currencies",
   titlePanel("Crypto Currencies"),
   br(),
