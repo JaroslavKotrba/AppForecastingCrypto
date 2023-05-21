@@ -8,9 +8,11 @@ library(plotly)
 ui <- fluidPage(
   tags$head(tags$link(rel="shortcut icon", href="https://cutewallpaper.org/24/bitcoin-png/hd-blue-btc-bitcoin-crypto-blockchain-coin-icon-png-citypng.png")),
   title = "Crypto Currencies",
-  titlePanel("Crypto Currencies"),
   br(),
-  p("See crypto currencies prices, select the one you are interested in from the box below!"),
+  
+  h3("Select ", code("crypto CURRENCY"), "that you want to invest in:", style = "color: cornflowerblue"),
+  p("See crypto currencies prices with forecasting, select different parameters from the box below!"),
+  br(),
   
   sidebarLayout(
     
